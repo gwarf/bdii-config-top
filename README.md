@@ -1,6 +1,6 @@
 # Top BDII Configuration files
 
-This repository contains Top Site BDII configuration files.
+This repository contains Top BDII configuration files.
 
 BDII documentation is available at
 [gridinfo documentation site](https://gridinfo-documentation.readthedocs.io/).
