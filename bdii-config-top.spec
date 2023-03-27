@@ -1,28 +1,22 @@
-Name:		bdii-config-top
-Version:	1.0.10
-Release:	1%{?dist}
-Summary:	Top BDII configuration files
-Group:		Development/Libraries
-License:	ASL 2.0
-URL:            http://gridinfo.web.cern.ch
-# The source for this package was pulled from upstream's vcs.  Use the
-# following commands to generate the tarball:
-#  svn export http://svnweb.cern.ch/guest/gridinfo/bdii-config-top/tags/R_1_0_10_1 %{name}-%{version}
-#  tar --gzip -czvf %{name}-%{version}.tar.gz %{name}-%{version} 
-Source:		%{name}-%{version}.src.tgz
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
-Requires:	bdii
-%if "%{?dist}" == ".el5"
-Requires: openldap2.4-servers
-%else
-Requires: openldap-servers 
-%endif
-Requires:	glite-info-provider-ldap
-Requires:	glite-info-provider-service
-Requires:	glite-info-update-endpoints
-Obsoletes:	glite-info-plugin-fcr
-Requires:       glite-info-plugin-delayed-delete-status
+Name:          bdii-config-top
+Version:       1.0.10
+Release:       1%{?dist}
+Summary:       Top BDII configuration files
+Group:         Development/Libraries
+License:       ASL 2.0
+URL:           https://github.com/EGI-Foundation/bdii-config-top
+Source:        %{name}-%{version}.tar.gz
+BuildArch:     noarch
+BuildRoot:     %{_tmppath}/%{name}-%{version}-build
+BuildRequires: rsync
+BuildRequires: make
+Requires:      bdii
+Requires:      openldap-servers
+Requires:      glite-info-provider-ldap
+Requires:      glite-info-provider-service
+Requires:      glite-info-update-endpoints
+Obsoletes:     glite-info-plugin-fcr
+Requires:      glite-info-plugin-delayed-delete-status
 
 %description
 Configuration files for the Top BDII
@@ -43,11 +37,15 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %dir /var/log/glite/
-/var/lib/bdii/gip/provider/glite-info-provider-service-bdii-top
-/var/lib/bdii/gip/provider/glite-info-provider-top
-/var/lib/bdii/gip/provider/glite-info-provider-service-bdii-top-glue2
-/var/lib/bdii/gip/provider/glite-info-provider-top-glue2
-/var/lib/bdii/gip/plugin/glite-info-plugin-delayed-delete-status
+%{_sharedstatedir}/bdii/gip/provider/glite-info-provider-service-bdii-top
+%{_sharedstatedir}/bdii/gip/provider/glite-info-provider-top
+%{_sharedstatedir}/bdii/gip/provider/glite-info-provider-service-bdii-top-glue2
+%{_sharedstatedir}/bdii/gip/provider/glite-info-provider-top-glue2
+%{_sharedstatedir}/bdii/gip/plugin/glite-info-plugin-delayed-delete-status
+%doc %{_docdir}/%{name}-%{version}/README.md
+%doc %{_docdir}/%{name}-%{version}/AUTHORS.md
+%license /usr/share/licenses/%{name}-%{version}/COPYRIGHT
+%license /usr/share/licenses/%{name}-%{version}/LICENSE.txt
 
 %changelog
 
