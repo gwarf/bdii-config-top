@@ -1,5 +1,5 @@
 Name:          bdii-config-top
-Version:       1.0.10
+Version:       1.1.0
 Release:       1%{?dist}
 Summary:       Top BDII configuration files
 Group:         Development/Libraries
@@ -48,6 +48,8 @@ rm -rf %{buildroot}
 %license /usr/share/licenses/%{name}-%{version}/LICENSE.txt
 
 %changelog
+* Mon Mar 27 2023 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.1.0-1
+- Import community files and GitHub actions. Target CentOS 7, AlmaLinux 8 and 9. (#2) (Baptiste Grenier)
 
 * Wed Nov 27 2013 Maria Alandes <maria.alandes.pradillo@cern.ch> - 1.0.10-1
 - Do not install the FCR plugin wrapper after obsoleting the FCR mechanism
@@ -66,15 +68,21 @@ rm -rf %{buildroot}
 
 * Mon May 25 2012 Laurence Field <laurence.field@cern.ch> - 1.0.6-1
 - Changed the location of top-urls.conf to address GGUS #73823
+
 * Wed Mar 14 2012 Laurence Field <laurence.field@cern.ch> - 1.0.5-1
 - Improved dependency definition
+
 * Tue Aug 22 2011 Laurence Field <laurence.field@cern.ch> - 1.0.4-1
 - Fixed #84230 and #84242
+
 * Tue Apr 18 2011 Laurence Field <laurence.field@cern.ch> - 1.0.2-1
 - Removed the dependency on glite-info-provider-release
+
 * Tue Apr 05 2011 Laurence Field <laurence.field@cern.ch> - 1.0.1-1
 - Fixes for change in glite-info-service
+
 * Tue Mar 15 2011 Laurence Field <laurence.field@cern.ch> - 1.0.0-1
 - Made FSH Compliant
+
 * Mon Sep 06 2010 Laurence Field <laurence.field@cern.ch> - 0.0.6-1
 - New package
