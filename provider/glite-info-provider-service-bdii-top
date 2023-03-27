@@ -22,7 +22,7 @@ DEFAULTS=/etc/bdii/gip/glite-info-site-defaults.conf
 
 # Check for the existence of the configuration file.
 if [ -f "${DEFAULTS}" ]; then
-	source "${DEFAULTS}"
+	. "${DEFAULTS}"
 fi
 
 SITE_NAME=${SITE_NAME:-$(hostname -d)}
