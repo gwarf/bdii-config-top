@@ -19,16 +19,15 @@ CONFIG=/var/cache/glite/top-urls.conf
 SCRIPT=/usr/libexec/glite-info-provider-ldap
 
 # Check for the existence of the configuration file.
-if [ ! -f ${CONFIG} ]; then
-    echo "Error: The configuration file ${CONFIG} does not exist." 1>&2
-    exit 1
-fi 
+if [ ! -f "${CONFIG}" ]; then
+	echo "Error: The configuration file ${CONFIG} does not exist." 1>&2
+	exit 1
+fi
 
 # Check for the existence of the provider.
-if [ ! -f ${SCRIPT} ]; then
-    echo "Error: The provider ${SCRIPT} does not exist." 1>&2
-    exit 1
-fi 
+if [ ! -f "${SCRIPT}" ]; then
+	echo "Error: The provider ${SCRIPT} does not exist." 1>&2
+	exit 1
+fi
 
-${SCRIPT} -c ${CONFIG} -g grid
-
+${SCRIPT} -c "${CONFIG}" -g grid
